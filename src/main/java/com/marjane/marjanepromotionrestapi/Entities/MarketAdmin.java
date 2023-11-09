@@ -1,19 +1,18 @@
 package com.marjane.marjanepromotionrestapi.Entities;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "CentralAdmin")
-@Table(name = "central_adminstrator")
+@Entity(name = "MarketAdmin")
+@Table(name = "market_adminstrator")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CentralAdmin {
+public class MarketAdmin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -34,4 +33,8 @@ public class CentralAdmin {
 
     private String password;
 
+    @OneToOne
+    @JoinColumn(name = "market_id", referencedColumnName = "id" , foreignKey = @ForeignKey(name = "market_adminstrator_market_id_fkey"))
+
+    private Market market;
 }
