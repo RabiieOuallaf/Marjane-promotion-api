@@ -7,31 +7,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "CentralAdmin")
-@Table(name = "central_adminstrator")
+@Entity(name = "Regions")
+@Table(name = "regions")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CentralAdmin {
+public class Regions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
     @Basic
-    @Column(name = "fullname")
+    @Column(name = "region")
 
-    private String fullname;
-
-    @Basic
-    @Column(name = "email")
-
-    private String email;
-
-    @Basic
-    @Column(name = "password")
-
-    private String password;
-
+    private String region;
 }

@@ -1,37 +1,28 @@
 package com.marjane.marjanepromotionrestapi.Entities;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "CentralAdmin")
-@Table(name = "central_adminstrator")
+@Entity(name = "Market")
+@Table(name = "marjane_market")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CentralAdmin {
+public class Market {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
-    @Column(name = "fullname")
-
-    private String fullname;
-
-    @Basic
-    @Column(name = "email")
-
-    private String email;
+    @ManyToOne
+    @JoinColumn(name = "region_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "marjane_market___fk "))
+    private Regions region;
 
     @Basic
-    @Column(name = "password")
-
-    private String password;
-
+    @Column(name = "name")
+    private String name;
 }
