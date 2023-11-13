@@ -1,0 +1,9 @@
+com/marjane/services/ProductServiceTest.class
+com/marjane/core/AppContextTest.class
+com/marjane/services/CategoryProductServiceTest.class
+com/marjane/services/CentreServiceTest.class
+com/marjane/services/SubCategoryProductServiceTest.class
+com/marjane/services/CityServiceTest.class
+com/marjane/services/UserServiceTest.class
+com/marjane/services/UserDetailsServiceImplTest.class
+com/marjane/services/PromotionServiceTest.class
